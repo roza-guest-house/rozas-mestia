@@ -883,11 +883,24 @@
       }
     }
 
-    @media (max-width: 768px) {
-  .hero-bg {
-    transform: translate3d(0, 0, 0) !important;
-  }
-}
+    .hero-bg {
+      position: absolute; 
+      inset: 0; /* Changed from -10% to 0 to prevent "jumping" */
+      z-index: 0;
+      background-image: url('hero.jpg') !important;
+      background-size: cover !important; 
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      /* We remove the 'transform' here to stop the flickering on Android */
+      transform: none !important; 
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(14,22,16,0.6), rgba(45,58,47,0.5)) !important;
+    }
 
     @media (max-width: 640px) {
       body { padding-bottom: 5rem; }
