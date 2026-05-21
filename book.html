@@ -6,7 +6,7 @@
   <title>Book Direct in Mestia, Svaneti | Roza&rsquo;s Guest House</title>
   <meta
     name="description"
-    content="Book direct with Roza's Guest House in Mestia. Search live room products, compare direct prices, and confirm your booking instantly."
+    content="Book direct with Roza's Guest House in Mestia. Search live room products, compare direct prices, and receive a confirmation number."
   />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#2D3A2F" />
@@ -1322,7 +1322,7 @@
 
         <div class="mini-value-box">
           <p class="eyebrow">Book direct</p>
-          <p class="mini-value-lead">Best direct price. Instant confirmation.</p>
+          <p class="mini-value-lead">Best direct price. Instant confirmation number.</p>
         </div>
       </div>
 
@@ -1332,8 +1332,8 @@
           <span>Live PMS-backed pricing for the stay you search.</span>
         </div>
         <div class="value-item">
-          <strong>Instant confirmation</strong>
-          <span>If the room is still valid, the booking confirms directly into Roza's PMS.</span>
+          <strong>Instant confirmation number</strong>
+          <span>If the room is still valid, a confirmation number is created directly in Roza's PMS.</span>
         </div>
         <div class="value-item">
           <strong>Direct with Roza</strong>
@@ -1465,7 +1465,7 @@
           <textarea id="guest_notes" name="guest_notes" class="field-textarea" placeholder="Arrival timing, transfer note, or anything helpful for the family to know"></textarea>
         </label>
 
-        <div class="booking-note">Your room is rechecked before confirmation. After booking, you will receive a confirmation number, and our family team is available on WhatsApp if you need help.</div>
+        <div class="booking-note">Your room is rechecked before confirmation. Your direct booking is confirmed with a confirmation number. Payment is arranged directly with Roza's Guest House before or during your stay, and our family team is available on WhatsApp if you need help.</div>
 
         <div class="search-actions">
           <button id="website-submit" type="button" class="booking-button" disabled>Complete direct booking</button>
@@ -1650,7 +1650,6 @@
         { src: "Peack Mountain View with Balcony/peak twin .png", alt: "Twin-bed view in the Peak Mountain View Room with Balcony" },
         { src: "Peack Mountain View with Balcony/Premium Triple .png", alt: "Triple-bed setup in the Peak Mountain View Room with Balcony" },
         { src: "Peack Mountain View with Balcony/Premium triple 2 .png", alt: "Additional triple-room view in the Peak Mountain View Room with Balcony" },
-        { src: "Peack Mountain View with Balcony/Gemini_Generated_Image_ixg0ozixg0ozixg0.png", alt: "Additional room view in the Peak Mountain View Room with Balcony" },
         { src: "Peack Mountain View with Balcony/IMG_9118.PNG", alt: "Representative ensuite bathroom shower for the Peak Mountain View Room with Balcony" },
         { src: "Peack Mountain View with Balcony/IMG_9122.PNG", alt: "Vanity detail for the Peak Mountain View Room with Balcony bathroom" }
       ],
@@ -1684,7 +1683,6 @@
       "Peack Mountain View with Balcony/peak twin .png": { width: 1792, height: 2390 },
       "Peack Mountain View with Balcony/Premium Triple .png": { width: 1792, height: 2390 },
       "Peack Mountain View with Balcony/Premium triple 2 .png": { width: 1792, height: 2390 },
-      "Peack Mountain View with Balcony/Gemini_Generated_Image_ixg0ozixg0ozixg0.png": { width: 1792, height: 2390 },
       "Peack Mountain View with Balcony/IMG_9118.PNG": { width: 896, height: 1195 },
       "Peack Mountain View with Balcony/IMG_9122.PNG": { width: 896, height: 1195 },
       "cottage refined/IMG_9193.PNG": { width: 896, height: 1195 },
@@ -2486,7 +2484,7 @@
         Boolean(bookingState.selectedProductId) &&
         Boolean(getSelectedProduct());
 
-      websiteSubmit.disabled = websiteSubmitBusy || availabilityBusy || !hasFreshAvailability;
+      websiteSubmit.disabled = websiteSubmitBusy || availabilityBusy || !hasFreshAvailability || !hasValidWebsiteBookingInputs();
       websiteSubmit.setAttribute("aria-disabled", websiteSubmit.disabled ? "true" : "false");
       setButtonBusy(websiteSubmit, websiteSubmitBusy, "Confirming...");
     }
@@ -2689,6 +2687,10 @@
       if (!email) return "Please enter your email so we can send the booking confirmation.";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return "Please enter a valid email address for the website booking.";
       return "";
+    }
+
+    function hasValidWebsiteBookingInputs() {
+      return validateWebsiteForm() === "";
     }
 
     function resetBookingState() {
@@ -3013,7 +3015,9 @@
       field.addEventListener("input", () => {
         setFeedback("", "");
         updateDirectLinks();
+        syncWebsiteSubmitState();
       });
+      field.addEventListener("change", syncWebsiteSubmitState);
     });
 
     if (availabilityCheck) {
