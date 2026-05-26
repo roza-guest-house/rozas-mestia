@@ -641,11 +641,13 @@
       transition: transform 0.7s var(--ease-lux);
     }
 
-    [data-room-card] {
+    [data-room-card],
+    [data-gallery-card] {
       cursor: zoom-in;
     }
 
-    [data-room-card]:focus-visible {
+    [data-room-card]:focus-visible,
+    [data-gallery-card]:focus-visible {
       outline: 2px solid rgba(188,122,76,0.60);
       outline-offset: 4px;
     }
@@ -1668,6 +1670,10 @@
       background:
         linear-gradient(180deg, transparent 0%, rgba(12,18,14,0.04) 34%, rgba(12,18,14,0.30) 100%),
         radial-gradient(circle at 80% 15%, rgba(188,122,76,0.16), transparent 28%);
+    }
+
+    .roza-gallery-thumbs {
+      display: none;
     }
 
     .roza-moment-body {
@@ -2737,50 +2743,50 @@
 
         <div class="svaneti-destination-grid mt-12" data-stagger>
           <article class="svaneti-destination-card reveal">
-            <img src="svaneti/online-mestia-evening-svan-towers-dmytro-balkhovitin-cc-by-sa-4.jpg" alt="Evening view of Svan towers and old Mestia" loading="lazy" decoding="async" width="4500" height="3001" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
+            <img src="hero.jpg" alt="Sunset over Mestia and the Caucasus mountains from Roza's Guest House" loading="lazy" decoding="async" width="4000" height="3000" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
             <div class="svaneti-destination-content">
-              <h3>Svan towers &amp; old Mestia</h3>
-              <p>Walk through a town shaped by centuries of mountain life, tower houses, family stories, and Svan hospitality.</p>
+              <h3>Mestia evenings from Roza's</h3>
+              <p>Sunset mountain views, Svan towers, and a quieter hillside setting close to the centre.</p>
             </div>
           </article>
 
           <article class="svaneti-destination-card reveal">
-            <img src="svaneti/09_Koruldi.jpg" alt="Koruldi Lakes and Caucasus views near Mestia" loading="lazy" decoding="async" width="1000" height="580" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
+            <img src="cottage refined/IMG_9177.PNG" alt="A-frame cottages and green Svaneti mountains at Roza's Guest House" loading="lazy" decoding="async" width="895" height="1061" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
             <div class="svaneti-destination-content">
-              <h3>Koruldi Lakes &amp; Caucasus views</h3>
-              <p>A classic Svaneti mountain day with ridgelines, open skies, and the kind of views people remember long after leaving Mestia.</p>
+              <h3>Mountain air around the house</h3>
+              <p>A calm base for trail days, fresh air, and slow mornings before exploring Svaneti.</p>
             </div>
           </article>
 
           <article class="svaneti-destination-card reveal">
-            <img src="svaneti/online-chalaadi-glacier-jelger-groeneveld-cc-by-2.jpg" alt="Chalaadi Glacier mountain walk near Mestia" loading="lazy" decoding="async" width="3872" height="2592" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
+            <img src="cottage refined/IMG_9179.PNG" alt="Private cottage deck with mountain views at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
             <div class="svaneti-destination-content">
-              <h3>Chalaadi Glacier walk</h3>
-              <p>A classic Mestia-area hike for guests who want a real mountain day without overcomplicating the plan.</p>
+              <h3>Views before trail days</h3>
+              <p>Start with coffee and a local plan before heading toward lakes, glaciers, villages, or viewpoints.</p>
             </div>
           </article>
 
           <article class="svaneti-destination-card reveal">
-            <img src="svaneti/online-ushguli-valley-lukas-scheuter-unsplash.jpg" alt="Ushguli valley and high mountain scenery in Svaneti" loading="lazy" decoding="async" width="1800" height="1350" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
+            <img src="Peack Mountain View/IMG_1512.jpg" alt="Peak Mountain View bedroom prepared for guests at Roza's Guest House" loading="lazy" decoding="async" width="3024" height="4032" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
             <div class="svaneti-destination-content">
-              <h3>Ushguli &amp; high valleys</h3>
-              <p>One of the most memorable routes in Svaneti, with high mountain scenery, ancient villages, and roads worth planning properly.</p>
+              <h3>Warm rooms after mountain days</h3>
+              <p>Heated rooms and simple comfort after hiking, skiing, or a long road day in Svaneti.</p>
             </div>
           </article>
 
           <article class="svaneti-destination-card reveal">
-            <img src="svaneti/Tetnuldi-Ski-Resort-featured_image.jpg" alt="Tetnuldi ski area in winter Svaneti" loading="lazy" decoding="async" width="1600" height="900" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
+            <img src="svaneti/guide-car.jpg" alt="Guide vehicle outside Roza's Guest House before a Svaneti route" loading="lazy" decoding="async" width="769" height="835" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
             <div class="svaneti-destination-content">
-              <h3>Winter Svaneti</h3>
-              <p>Snow, quiet mountain days, warm rooms, and skiing around Hatsvali or Tetnuldi when conditions allow.</p>
-            </div>
-          </article>
-
-          <article class="svaneti-destination-card reveal">
-            <img src="svaneti/online-mountain-road-aleko-kezevadze-unsplash.jpg" alt="Mountain road through Svaneti for day-trip planning" loading="lazy" decoding="async" width="1800" height="1200" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
-            <div class="svaneti-destination-content">
-              <h3>Local planning before you go</h3>
+              <h3>Local route planning</h3>
               <p>Ask Roza what is realistic for your dates, weather, transport, fitness level, and road conditions before choosing the day.</p>
+            </div>
+          </article>
+
+          <article class="svaneti-destination-card reveal">
+            <img src="svaneti/masterclass-dinner.jpg" alt="Traditional Svan dining table with wine at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
+            <div class="svaneti-destination-content">
+              <h3>Food and Svan hospitality</h3>
+              <p>Ask about family-style meals, local tastes, and seasonal masterclasses during your stay.</p>
             </div>
           </article>
         </div>
@@ -2844,31 +2850,33 @@
         </div>
 
         <div class="roza-moments-grid mt-12" data-stagger>
-          <article class="roza-moment-card reveal">
+          <article class="roza-moment-card reveal" data-gallery-card data-gallery-kicker="Masterclass gallery">
             <div class="roza-moment-image">
-              <img src="svaneti/Masterclass dinner.jpg" alt="Traditional Svan cooking masterclass table with wine at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
+              <img src="svaneti/masterclass-dinner.jpg" alt="Traditional Svan cooking masterclass table with wine at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
+              <span class="room-photo-cue">View photos</span>
             </div>
             <div class="roza-moment-body">
               <p class="roza-moment-meta">Food with Roza</p>
-              <h3>Georgian Wine &amp; Svan Cooking Masterclass</h3>
-              <p>Join Roza&rsquo;s family for a relaxed Georgian wine masterclass paired with authentic Svan cuisine. Taste traditional dishes such as Kubdari, Tashmijabi and other local mountain specialities while learning about the flavours and traditions of Svaneti.</p>
+              <h3>Masterclass</h3>
+              <p data-gallery-description>Ask us about local masterclasses during your stay.</p>
             </div>
           </article>
 
-          <article class="roza-moment-card reveal">
+          <article class="roza-moment-card reveal" data-gallery-card data-gallery-kicker="Live Concert gallery">
             <div class="roza-moment-image">
-              <img src="svaneti/Ensemble Riho concert .jpg" alt="Ensemble Riho concert evening with guests at Roza's Guest House" loading="lazy" decoding="async" width="1195" height="896" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
+              <img src="svaneti/ensemble-riho-concert.jpg" alt="Ensemble Riho concert evening with guests at Roza's Guest House" loading="lazy" decoding="async" width="1195" height="896" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
+              <span class="room-photo-cue">View photos</span>
             </div>
             <div class="roza-moment-body">
               <p class="roza-moment-meta">Evenings</p>
-              <h3>Private local music evening</h3>
-              <p>Local singer or small concert from &pound;200, best for groups or special stays, subject to availability.</p>
+              <h3>Live Concert</h3>
+              <p data-gallery-description>Experience a warm local evening with live music and Svaneti hospitality.</p>
             </div>
           </article>
 
           <article class="roza-moment-card reveal">
             <div class="roza-moment-image">
-              <img src="svaneti/guide car .jpg" alt="Guide vehicle and guests preparing for a mountain route in Svaneti" loading="lazy" decoding="async" width="769" height="835" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
+              <img src="svaneti/guide-car.jpg" alt="Guide vehicle and guests preparing for a mountain route in Svaneti" loading="lazy" decoding="async" width="769" height="835" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
             </div>
             <div class="roza-moment-body">
               <p class="roza-moment-meta">Mountain days</p>
@@ -2879,12 +2887,12 @@
 
           <article class="roza-moment-card reveal">
             <div class="roza-moment-image">
-              <img src="svaneti/online-horses-mountain-alexander-liebstueckel-unsplash.jpg" alt="Horses in the Svaneti mountains" loading="lazy" decoding="async" width="1800" height="2689" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
+              <img src="cottage refined/IMG_9190.PNG" alt="Lounge area with mountain-view windows at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
             </div>
             <div class="roza-moment-body">
               <p class="roza-moment-meta">Local products</p>
-              <h3>Horse hire &amp; Svaneti products</h3>
-              <p>Horse hire may be available, plus Svan salt, wild Svaneti honey, and seasonal village products.</p>
+              <h3>Svaneti products &amp; local details</h3>
+              <p>Ask about Svan salt, wild Svaneti honey, and seasonal village products.</p>
             </div>
           </article>
         </div>
@@ -3259,7 +3267,7 @@
       </div>
 
       <div class="image-credits reveal">
-        <strong>Image credits:</strong> destination/public imagery includes Dmytro Balkhovitin (CC BY-SA 4.0), Jelger Groeneveld (CC BY 2.0), Lukas Scheuter, Aleko Kezevadze, and Alexander Liebstueckel via Unsplash.
+        <strong>Image credits:</strong> photos shown on this page are owner-provided Roza's Guest House room, property, and local experience images.
       </div>
 
       <div class="mt-14 flex flex-col gap-4 border-t border-cream/9 pt-8 sm:flex-row sm:items-center sm:justify-between">
@@ -3285,7 +3293,7 @@
             <p class="room-viewer-kicker">Room gallery</p>
             <h2 id="room-viewer-title" class="mt-2 font-display text-3xl font-semibold leading-tight text-forest sm:text-[2.25rem]"></h2>
           </div>
-          <button id="room-viewer-close" type="button" class="room-viewer-close btn-focus" aria-label="Close room gallery">
+          <button id="room-viewer-close" type="button" class="room-viewer-close btn-focus" aria-label="Close gallery">
             <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
               <path d="M3.5 3.5L12.5 12.5M12.5 3.5L3.5 12.5" />
             </svg>
@@ -3302,12 +3310,12 @@
         <div class="room-viewer-main">
           <img id="room-viewer-image" src="" alt="" />
           <div class="room-viewer-nav">
-            <button id="room-viewer-prev" type="button" class="btn-focus" aria-label="Previous room image">
+            <button id="room-viewer-prev" type="button" class="btn-focus" aria-label="Previous gallery image">
               <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9.5 3.5L5 8l4.5 4.5" />
               </svg>
             </button>
-            <button id="room-viewer-next" type="button" class="btn-focus" aria-label="Next room image">
+            <button id="room-viewer-next" type="button" class="btn-focus" aria-label="Next gallery image">
               <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6.5 3.5L11 8l-4.5 4.5" />
               </svg>
@@ -3342,6 +3350,7 @@
       const heroShell = document.querySelector(".hero-shell");
       const roomViewer = document.getElementById("room-viewer");
       const roomViewerImage = document.getElementById("room-viewer-image");
+      const roomViewerKicker = document.querySelector(".room-viewer-kicker");
       const roomViewerTitle = document.getElementById("room-viewer-title");
       const roomViewerDescription = document.getElementById("room-viewer-description");
       const roomViewerCount = document.getElementById("room-viewer-count");
@@ -3356,6 +3365,7 @@
       const mobileNavClose = document.getElementById("mobile-nav-close");
       const mobileNavBackdrop = document.querySelector("[data-mobile-close]");
       const roomCards = Array.from(document.querySelectorAll("[data-room-card]"));
+      const galleryCards = Array.from(document.querySelectorAll("[data-gallery-card]"));
 
       let activeRoomGallery = [];
       let activeRoomIndex = 0;
@@ -3625,13 +3635,24 @@
         }, { passive: true });
       }
 
-      function getRoomGallery(card) {
-        return Array.from(card.querySelectorAll(".room-art > img, .room-thumb > img")).map((image) => ({
+      function getGalleryImages(card) {
+        const selector = card.hasAttribute("data-gallery-card")
+          ? ".roza-moment-image > img, .roza-gallery-thumbs img"
+          : ".room-art > img, .room-thumb > img";
+
+        return Array.from(card.querySelectorAll(selector)).map((image) => ({
           src: image.getAttribute("src"),
           alt: image.getAttribute("alt") || "",
           width: Number(image.getAttribute("width")) || null,
           height: Number(image.getAttribute("height")) || null
         }));
+      }
+
+      function getGalleryDescription(card) {
+        return card.querySelector("[data-gallery-description]")?.textContent.replace(/\u00a0/g, " ").trim()
+          || card.querySelector(".p-7 > p")?.textContent.replace(/\u00a0/g, " ").trim()
+          || card.querySelector(".roza-moment-body > p:not(.roza-moment-meta)")?.textContent.replace(/\u00a0/g, " ").trim()
+          || "";
       }
 
       function renderRoomViewerImage() {
@@ -3674,9 +3695,11 @@
       function openRoomViewer(card, index = 0) {
         if (!roomViewer || !roomViewerImage || !roomViewerThumbs || !roomViewerTitle || !roomViewerDescription) return;
 
-        const title = card.querySelector("h3")?.textContent.trim() || "Room gallery";
-        const description = card.querySelector(".p-7 > p")?.textContent.replace(/\u00a0/g, " ").trim() || "";
-        const gallery = getRoomGallery(card);
+        const isExperienceGallery = card.hasAttribute("data-gallery-card");
+        const title = card.querySelector("h3")?.textContent.trim() || (isExperienceGallery ? "Experience gallery" : "Room gallery");
+        const description = getGalleryDescription(card);
+        const galleryKicker = card.getAttribute("data-gallery-kicker") || (isExperienceGallery ? "Experience gallery" : "Room gallery");
+        const gallery = getGalleryImages(card);
 
         if (!gallery.length) return;
 
@@ -3684,6 +3707,7 @@
         activeRoomIndex = Math.max(0, Math.min(index, gallery.length - 1));
         lastRoomTrigger = card;
 
+        if (roomViewerKicker) roomViewerKicker.textContent = galleryKicker;
         roomViewerTitle.textContent = title;
         roomViewerDescription.textContent = description;
         roomViewerThumbs.innerHTML = "";
@@ -3718,29 +3742,39 @@
         roomViewerClose?.focus({ preventScroll: true });
       }
 
-      function initRoomViewer() {
-        if (!roomViewer || !roomCards.length) return;
+      function initGalleryTrigger(card) {
+        const title = card.querySelector("h3")?.textContent.trim() || "this gallery";
+        const imageSelector = card.hasAttribute("data-gallery-card")
+          ? ".roza-moment-image > img, .roza-gallery-thumbs img"
+          : ".room-art > img, .room-thumb > img";
 
-        roomCards.forEach((card) => {
-          card.setAttribute("tabindex", "0");
-          card.setAttribute("role", "button");
-          card.setAttribute("aria-haspopup", "dialog");
-          card.setAttribute("aria-label", `Open full-screen gallery for ${card.querySelector("h3")?.textContent.trim() || "this room"}`);
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-haspopup", "dialog");
+        card.setAttribute("aria-label", `Open full-screen gallery for ${title}`);
 
-          card.addEventListener("click", (event) => {
-            const images = Array.from(card.querySelectorAll(".room-art > img, .room-thumb > img"));
-            const clickedImage = event.target.closest("img");
-            const imageIndex = clickedImage ? Math.max(images.indexOf(clickedImage), 0) : 0;
-            openRoomViewer(card, imageIndex);
-          });
+        card.addEventListener("click", (event) => {
+          if (event.target.closest("a, button")) return;
 
-          card.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              openRoomViewer(card, 0);
-            }
-          });
+          const images = Array.from(card.querySelectorAll(imageSelector));
+          const clickedImage = event.target.closest("img");
+          const imageIndex = clickedImage ? Math.max(images.indexOf(clickedImage), 0) : 0;
+          openRoomViewer(card, imageIndex);
         });
+
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openRoomViewer(card, 0);
+          }
+        });
+      }
+
+      function initRoomViewer() {
+        const galleryTriggers = [...roomCards, ...galleryCards];
+        if (!roomViewer || !galleryTriggers.length) return;
+
+        galleryTriggers.forEach(initGalleryTrigger);
 
         roomViewerClose?.addEventListener("click", closeRoomViewer);
         roomViewerBackdrop?.addEventListener("click", closeRoomViewer);
