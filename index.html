@@ -73,8 +73,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="svaneti/Local Attractions/svaneti-mountain-road-hiking-route.webp" media="(max-width: 767px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="svaneti/Local Attractions/svaneti-mountain-road-hiking-route.webp" media="(min-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="hero.jpg" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="hero.jpg" media="(min-width: 768px)" fetchpriority="high" />
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
@@ -252,10 +252,16 @@
       top: 0;
       z-index: 50;
       pointer-events: auto;
-      background: transparent;
-      border-bottom: 1px solid transparent;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
+      background: rgba(253,248,242,0.92);
+      border-bottom: 1px solid rgba(45,58,47,0.08);
+      backdrop-filter: blur(18px) saturate(1.4);
+      -webkit-backdrop-filter: blur(18px) saturate(1.4);
+      box-shadow:
+        0 1px 1px rgba(18,26,20,0.03),
+        0 6px 14px rgba(18,26,20,0.04),
+        0 14px 30px rgba(18,26,20,0.05),
+        0 28px 54px rgba(18,26,20,0.06),
+        0 46px 76px rgba(18,26,20,0.06);
       transition:
         background 0.55s var(--ease-lux),
         border-color 0.55s var(--ease-lux),
@@ -313,14 +319,14 @@
         transform 0.3s var(--ease-lux);
     }
 
-    #site-header .hdr-logo-name { color: #fdf8f2; }
-    #site-header .hdr-logo-sub { color: rgba(253,248,242,0.62); }
-    #site-header .hdr-nav-link { color: rgba(253,248,242,0.76); }
-    #site-header .hdr-nav-link:hover { color: #ffffff; }
+    #site-header .hdr-logo-name { color: var(--forest); }
+    #site-header .hdr-logo-sub { color: var(--slate); }
+    #site-header .hdr-nav-link { color: var(--slate); }
+    #site-header .hdr-nav-link:hover { color: var(--forest); }
     #site-header .hdr-monogram {
-      color: #fdf8f2;
-      border-color: rgba(253,248,242,0.22);
-      background: rgba(253,248,242,0.10);
+      color: var(--forest);
+      border-color: rgba(45,58,47,0.14);
+      background: rgba(255,255,255,0.84);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.22),
         0 1px 1px rgba(0,0,0,0.04),
@@ -330,14 +336,14 @@
     }
     #site-header .hdr-btn-ghost,
     #site-header .hdr-menu-btn {
-      color: rgba(253,248,242,0.92);
-      border-color: rgba(253,248,242,0.22);
-      background: rgba(253,248,242,0.06);
+      color: var(--forest);
+      border-color: rgba(45,58,47,0.14);
+      background: rgba(255,255,255,0.72);
     }
     #site-header .hdr-cta {
-      color: #fdf8f2;
-      border: 1.5px solid rgba(253,248,242,0.28);
-      background: rgba(253,248,242,0.14);
+      color: var(--cream);
+      border: 1.5px solid transparent;
+      background: var(--forest);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.12),
         0 1px 1px rgba(0,0,0,0.03),
@@ -495,7 +501,7 @@
       top: -15%;
       height: 130%;
       z-index: 0;
-      background-image: url("svaneti/Local Attractions/svaneti-mountain-road-hiking-route.webp");
+      background-image: url("hero.jpg");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -1080,25 +1086,33 @@
       justify-content: center;
       gap: 0.4rem;
       min-height: 2.45rem;
-      padding: 0.55rem 0.85rem;
-      border: 1px solid rgba(45,58,47,0.14);
+      padding: 0.6rem 0.95rem;
+      border: 1px solid rgba(188,122,76,0.26);
       border-radius: 999px;
-      background: rgba(253,248,242,0.9);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(253,248,242,0.92));
       font-size: 0.86rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--forest);
       text-decoration: none;
       white-space: nowrap;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.72),
         0 1px 1px rgba(18,26,20,0.03),
-        0 6px 12px rgba(18,26,20,0.05);
+        0 6px 12px rgba(18,26,20,0.05),
+        0 14px 28px rgba(18,26,20,0.06);
       transition:
         transform 0.25s var(--ease-lux),
         border-color 0.25s ease,
         background 0.25s ease,
         color 0.25s ease,
         box-shadow 0.25s ease;
+    }
+
+    .review-verify::after {
+      content: "\2197";
+      color: var(--sun);
+      font-size: 0.74rem;
+      line-height: 1;
     }
 
     .review-verify:hover {
@@ -1523,9 +1537,9 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 8% 18%, rgba(188,122,76,0.22), transparent 26%),
-        radial-gradient(circle at 92% 12%, rgba(253,248,242,0.10), transparent 24%),
-        linear-gradient(135deg, #26372c 0%, #18251d 62%, #101810 100%);
+        radial-gradient(circle at 8% 18%, rgba(188,122,76,0.25), transparent 27%),
+        radial-gradient(circle at 92% 12%, rgba(253,248,242,0.13), transparent 25%),
+        linear-gradient(135deg, #2b3f31 0%, #1d2e23 62%, #121d14 100%);
     }
 
     .roza-experience-section::before {
@@ -1585,9 +1599,9 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 18% 0%, rgba(188,122,76,0.18), transparent 25%),
-        radial-gradient(circle at 88% 12%, rgba(253,248,242,0.09), transparent 28%),
-        linear-gradient(145deg, #233428 0%, #17251c 58%, #101810 100%);
+        radial-gradient(circle at 18% 0%, rgba(188,122,76,0.22), transparent 26%),
+        radial-gradient(circle at 88% 12%, rgba(253,248,242,0.12), transparent 29%),
+        linear-gradient(145deg, #2a3d30 0%, #1d2e22 58%, #121d14 100%);
     }
 
     .roza-moments-section::before {
@@ -1624,7 +1638,7 @@
       border: 1px solid rgba(253,248,242,0.13);
       border-radius: 1.65rem;
       background:
-        linear-gradient(180deg, rgba(253,248,242,0.08), rgba(253,248,242,0.045));
+        linear-gradient(180deg, rgba(253,248,242,0.105), rgba(253,248,242,0.065));
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.10),
         0 1px 1px rgba(0,0,0,0.04),
@@ -1668,8 +1682,8 @@
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(180deg, transparent 0%, rgba(12,18,14,0.04) 34%, rgba(12,18,14,0.30) 100%),
-        radial-gradient(circle at 80% 15%, rgba(188,122,76,0.16), transparent 28%);
+        linear-gradient(180deg, transparent 0%, rgba(12,18,14,0.03) 36%, rgba(12,18,14,0.20) 100%),
+        radial-gradient(circle at 80% 15%, rgba(188,122,76,0.20), transparent 30%);
     }
 
     .roza-gallery-thumbs {
@@ -1710,14 +1724,14 @@
 
     .roza-moment-card p {
       margin-top: 0.85rem;
-      color: rgba(253,248,242,0.70);
+      color: rgba(253,248,242,0.76);
       font-size: 0.9rem;
       line-height: 1.75;
     }
 
     .roza-moment-card .roza-moment-meta {
       margin-top: 0;
-      color: rgba(253,248,242,0.52);
+      color: rgba(253,248,242,0.60);
       font-size: 0.64rem;
       line-height: 1.35;
     }
@@ -2239,7 +2253,7 @@
 
     @media (max-width: 768px) {
       .hero-bg {
-        background-image: url("svaneti/Local Attractions/svaneti-mountain-road-hiking-route.webp");
+        background-image: url("hero.jpg");
         transform: translate3d(0, 0, 0) !important;
       }
     }
@@ -2282,6 +2296,10 @@
         white-space: normal;
       }
 
+      .hero-shell .mt-9.flex {
+        padding-right: 4.25rem;
+      }
+
       .hero-shell .rounded-full,
       #trust .rounded-full,
       [data-room-card] .rounded-full {
@@ -2305,6 +2323,26 @@
         max-width: min(10.75rem, calc(100vw - 2rem));
         padding: 0.74rem 1rem;
         font-size: 0.8rem;
+        width: 3.15rem;
+        min-width: 3.15rem;
+        height: 3.15rem;
+        justify-content: center;
+        gap: 0;
+      }
+
+      #floating-whatsapp svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      #floating-whatsapp span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
       }
     }
 
@@ -2601,7 +2639,7 @@
                 </a>
               </div>
               <div class="mt-6 rounded-[1.5rem] border border-forest/8 bg-white/88 p-5 card-float">
-                <p class="text-sm leading-[1.8] text-slate">Roza or the family reply directly on WhatsApp, and this page uses the real room types and current room photos.</p>
+                <p class="text-sm leading-[1.8] text-slate">Book directly with Roza&rsquo;s family and arrive with confidence &mdash; warm rooms, mountain views, local advice, and help before and during your stay.</p>
                 <p class="mt-3 text-sm leading-[1.8] text-slate">9 Erekle Parjiani I Alley &middot; quiet location above the centre &middot; free parking on site &middot; direct family contact.</p>
               </div>
             </div>
@@ -2649,7 +2687,7 @@
         <div class="mt-12 grid gap-6 md:grid-cols-2" data-stagger>
           <article class="reveal group overflow-hidden rounded-[2rem] border border-forest/8 bg-white card-float" data-room-card data-room-type-id="CLASSIC">
             <div class="room-art flex items-end p-7 text-cream">
-              <img src="Classic/classic double .png" alt="Classic Room (Shared Bathroom) at Roza's Guest House" loading="lazy" decoding="async" width="1792" height="2390" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
+              <img src="Classic/classic double .png" alt="Classic Room (Shared Bathroom) at Roza's Guest House" loading="eager" decoding="async" width="1792" height="2390" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
               <span class="room-photo-cue">View photos</span>
               <div>
                 <div class="text-[10px] uppercase tracking-[0.24em] text-cream/62">Shared bathroom access</div>
