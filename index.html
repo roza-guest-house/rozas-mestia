@@ -1277,7 +1277,11 @@
       min-height: 360px;
       overflow: hidden;
       border-radius: 2rem;
-      background: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(245,239,230,0.94), rgba(253,248,242,0.78)),
+        linear-gradient(32deg, transparent 0 26%, rgba(188,122,76,0.18) 26% 28%, transparent 28% 100%),
+        linear-gradient(148deg, transparent 0 34%, rgba(45,58,47,0.12) 34% 36%, transparent 36% 100%),
+        linear-gradient(92deg, transparent 0 58%, rgba(188,122,76,0.14) 58% 60%, transparent 60% 100%);
       border: 1px solid rgba(45,58,47,0.08);
       box-shadow:
         0 1px 1px rgba(18,26,20,0.04),
@@ -1288,15 +1292,51 @@
     }
 
     .map-shell::before {
-      content: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 52% 45%, rgba(188,122,76,0.32) 0 0.48rem, transparent 0.52rem),
+        radial-gradient(circle at 52% 45%, rgba(188,122,76,0.12) 0 5.5rem, transparent 5.6rem),
+        repeating-linear-gradient(28deg, transparent 0 4.2rem, rgba(45,58,47,0.06) 4.2rem 4.35rem, transparent 4.35rem 8.2rem),
+        repeating-linear-gradient(118deg, transparent 0 5.3rem, rgba(188,122,76,0.08) 5.3rem 5.45rem, transparent 5.45rem 10rem);
     }
 
     .map-shell iframe {
       position: absolute;
       inset: 0;
+      z-index: 1;
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    .map-fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 1.1rem;
+      pointer-events: none;
+    }
+
+    .map-fallback-card {
+      max-width: min(22rem, 100%);
+      border: 1px solid rgba(45,58,47,0.10);
+      border-radius: 1.35rem;
+      background: rgba(255,255,255,0.92);
+      padding: 1rem;
+      color: var(--forest);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.78),
+        0 14px 30px rgba(18,26,20,0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      pointer-events: auto;
     }
 
     .map-pin-dot {
@@ -1599,9 +1639,13 @@
       position: relative;
       overflow: hidden;
       background:
+        linear-gradient(180deg, rgba(253,248,242,0.08) 0%, rgba(253,248,242,0.00) 10rem),
         radial-gradient(circle at 18% 0%, rgba(188,122,76,0.22), transparent 26%),
         radial-gradient(circle at 88% 12%, rgba(253,248,242,0.12), transparent 29%),
         linear-gradient(145deg, #2a3d30 0%, #1d2e22 58%, #121d14 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(253,248,242,0.18),
+        inset 0 38px 70px rgba(253,248,242,0.045);
     }
 
     .roza-moments-section::before {
@@ -1930,6 +1974,12 @@
     .reveal.visible {
       opacity: 1;
       transform: translate3d(0, 0, 0);
+    }
+
+    #reviews .reveal,
+    #find-us .reveal {
+      opacity: 1;
+      transform: none;
     }
 
     .floating-whatsapp-button {
@@ -2298,6 +2348,12 @@
 
       .hero-shell .mt-9.flex {
         padding-right: 4.25rem;
+      }
+
+      .hero-shell .rating-badge-row {
+        position: relative;
+        z-index: 45;
+        padding-right: 4.45rem;
       }
 
       .hero-shell .rounded-full,
@@ -2723,7 +2779,7 @@
 
           <article class="reveal group overflow-hidden rounded-[2rem] border border-forest/8 bg-white card-float" data-room-card data-room-type-id="PEAKMV">
             <div class="room-art flex items-end p-7 text-cream">
-              <img src="Peack Mountain View/IMG_9127.PNG" alt="Peak Mountain View twin room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
+              <img src="Peack Mountain View/IMG_9124.PNG" alt="Peak Mountain View room with Mestia tower view at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
               <span class="room-photo-cue">View photos</span>
               <div>
                 <div class="text-[10px] uppercase tracking-[0.24em] text-cream/62">Warm ensuite stay</div>
@@ -2741,7 +2797,7 @@
               <p class="room-price mt-4" data-room-pricing>Loading live direct price&hellip;</p>
               <div class="room-thumbs mt-6">
                 <div class="room-thumb"><img src="Peack Mountain View/IMG_9157.PNG" alt="Peak Mountain View room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="Peack Mountain View/IMG_9124.PNG" alt="Peak Mountain View room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="Peack Mountain View/IMG_9127.PNG" alt="Peak Mountain View twin room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
                 <div class="room-thumb"><img src="Peack Mountain View/IMG_1512.jpg" alt="Peak Mountain View room at Roza's Guest House" loading="lazy" decoding="async" width="3024" height="4032" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
                 <div class="room-thumb hidden"><img src="Peack Mountain View/peak triple .png" alt="Peak Mountain View triple room at Roza's Guest House" loading="lazy" decoding="async" width="1792" height="2390" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
               </div>
@@ -2992,7 +3048,7 @@
 
           <article class="roza-moment-card reveal">
             <div class="roza-moment-image">
-              <img src="svaneti/Local Attractions/mestia-local-guide-car-transfer.webp" alt="Local guide car transfer for Mestia and Svaneti trips" loading="lazy" decoding="async" width="770" height="835" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
+              <img src="svaneti/Local Attractions/svaneti-mountain-road-hiking-route.webp" alt="Mountain route and highland road in Svaneti" loading="lazy" decoding="async" width="1600" height="1066" sizes="(min-width: 1024px) 44vw, (min-width: 640px) 48vw, 100vw" />
             </div>
             <div class="roza-moment-body">
               <p class="roza-moment-meta">Mountain days</p>
@@ -3129,6 +3185,16 @@
           <div class="reveal">
             <div class="map-shell">
               <iframe title="Roza's Guest House on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Roza%27s%20Guest%20House%2C%209%20Erekle%20Parjiani%20I%20Alley%2C%20Mestia%203200%2C%20Georgia&output=embed"></iframe>
+              <div class="map-fallback">
+                <div class="map-fallback-card">
+                  <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate">Exact location</p>
+                  <p class="mt-2 font-display text-xl font-semibold text-forest">Roza's Guest House</p>
+                  <p class="mt-1.5 text-sm leading-[1.7] text-slate">9 Erekle Parjiani I Alley, Mestia 3200, Georgia</p>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Roza%27s%20Guest%20House%2C%209%20Erekle%20Parjiani%20I%20Alley%2C%20Mestia%203200%2C%20Georgia" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center rounded-full bg-forest px-4 py-2 text-xs font-semibold text-cream">
+                    Open Google Maps
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div class="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-[1.25rem] border border-forest/8 bg-white p-4 card-float">
