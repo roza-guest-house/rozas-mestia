@@ -615,6 +615,17 @@
       -webkit-backdrop-filter: blur(12px);
     }
 
+    [data-room-card] .room-photo-cue {
+      border-color: rgba(253,248,242,0.40);
+      background: rgba(18,26,20,0.66);
+      color: #fffdf9;
+      font-weight: 800;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 10px 22px rgba(18,26,20,0.22);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.34);
+    }
+
     .group:hover .room-art > img,
     .group:hover .room-thumb > img {
       transform: scale(1.04);
@@ -1142,6 +1153,21 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.72rem;
+    }
+
+    #reviews h2,
+    #reviews p,
+    #reviews a,
+    .review-card,
+    .review-quote,
+    .review-source-pill {
+      word-break: normal;
+      hyphens: none;
+    }
+
+    #reviews h2 {
+      overflow-wrap: normal;
+      text-wrap: balance;
     }
 
     .star {
@@ -1802,6 +1828,11 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .svaneti-destination-card.is-local-advice {
+        grid-column: 1 / -1;
+        min-height: 20rem;
+      }
+
       .svaneti-photo-card.is-large,
       .roza-experience-photo {
         min-height: 30rem;
@@ -1857,6 +1888,10 @@
       .svaneti-destination-card {
         min-height: 22rem;
         border-radius: 1.45rem;
+      }
+
+      .svaneti-destination-card.is-local-advice {
+        grid-column: auto;
       }
 
       .svaneti-destination-content {
@@ -1987,7 +2022,8 @@
       line-height: 1;
       transition:
         background-color 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
     }
 
     .booking-cta {
@@ -2309,7 +2345,7 @@
     }
 
     @media (max-width: 640px) {
-      body { padding-bottom: calc(5.75rem + env(safe-area-inset-bottom)); }
+      body { padding-bottom: calc(6.25rem + env(safe-area-inset-bottom)); }
       #site-header .hdr-shell {
         gap: 0.75rem;
         padding-left: 1rem;
@@ -2366,29 +2402,34 @@
       .room-art { min-height: 13.2rem; }
       .hero-shell > .relative.z-10,
       #reviews,
+      #rooms > div,
+      #why-mestia > div,
+      #find-us > div,
+      #faq > div,
       #final-book-direct > div,
       footer > .mx-auto {
-        padding-bottom: calc(5.65rem + env(safe-area-inset-bottom));
+        padding-bottom: calc(6.15rem + env(safe-area-inset-bottom));
       }
 
       #floating-whatsapp {
-        bottom: calc(1rem + env(safe-area-inset-bottom));
-        right: 1rem;
+        bottom: calc(0.82rem + env(safe-area-inset-bottom));
+        right: 0.82rem;
         z-index: 40;
-        min-height: 3rem;
-        max-width: min(10.75rem, calc(100vw - 2rem));
-        padding: 0.74rem 1rem;
+        min-height: 2.9rem;
+        max-width: min(9.5rem, calc(100vw - 1.5rem));
+        padding: 0.64rem;
         font-size: 0.8rem;
-        width: 3.15rem;
-        min-width: 3.15rem;
-        height: 3.15rem;
+        width: 2.9rem;
+        min-width: 2.9rem;
+        height: 2.9rem;
         justify-content: center;
         gap: 0;
+        transform: translate3d(0, 0, 0);
       }
 
       #floating-whatsapp svg {
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
       }
 
       #floating-whatsapp span {
@@ -2399,6 +2440,28 @@
         overflow: hidden;
         clip: rect(0 0 0 0);
         white-space: nowrap;
+      }
+
+      #reviews {
+        padding-right: max(1.25rem, calc(4.15rem + env(safe-area-inset-right)));
+      }
+
+      #reviews h2,
+      #reviews p,
+      .review-quote,
+      .review-source-pill {
+        overflow-wrap: normal;
+        hyphens: none;
+      }
+
+      .review-platform-links {
+        align-items: stretch;
+        padding-right: 0.25rem;
+      }
+
+      .review-verify {
+        white-space: normal;
+        text-align: center;
       }
     }
 
@@ -2455,17 +2518,17 @@
       }
 
       #floating-whatsapp {
-        width: 3.15rem;
-        min-width: 3.15rem;
-        height: 3.15rem;
+        width: 2.82rem;
+        min-width: 2.82rem;
+        height: 2.82rem;
         padding: 0;
         justify-content: center;
         gap: 0;
       }
 
       #floating-whatsapp svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
       }
 
       #floating-whatsapp span {
@@ -2940,7 +3003,7 @@
             </div>
           </article>
 
-          <article class="svaneti-destination-card reveal">
+          <article class="svaneti-destination-card is-local-advice reveal">
             <img src="svaneti/Local Attractions/mestia-local-guide-car-transfer.webp" alt="Local guide car transfer for Mestia and Svaneti trips" loading="lazy" decoding="async" width="770" height="835" sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
             <div class="svaneti-destination-content">
               <h3>Drivers and local advice</h3>
