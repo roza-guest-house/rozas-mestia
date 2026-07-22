@@ -95,6 +95,23 @@
     }
 
     * { box-sizing: border-box; }
+    .skip-link {
+      position: fixed;
+      z-index: 10000;
+      top: 0.75rem;
+      left: 0.75rem;
+      transform: translateY(-160%);
+      border-radius: 999px;
+      background: var(--forest);
+      color: var(--cream);
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(18,26,20,0.2);
+      transition: transform 0.2s var(--ease-lux);
+    }
+    .skip-link:focus { transform: translateY(0); }
     html {
       scroll-behavior: auto;
       -webkit-text-size-adjust: 100%;
@@ -2638,6 +2655,7 @@
   </style>
 </head>
 <body class="font-sans text-forest">
+  <a class="skip-link" href="#top">Skip to main content</a>
   <header id="site-header">
     <div class="hdr-shell mx-auto flex max-w-8xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8 lg:px-12 xl:max-w-[92rem]">
       <a href="#top" class="hdr-brand flex items-center gap-3.5 no-underline group">
@@ -2885,7 +2903,7 @@
         <div class="mt-12 grid gap-6 md:grid-cols-2" data-stagger>
           <article class="reveal group overflow-hidden rounded-[2rem] border border-forest/8 bg-white card-float" data-room-card data-room-type-id="CLASSIC">
             <div class="room-art flex items-end p-7 text-cream">
-              <img src="assets/images/optimized/classic-double-room.webp" alt="Classic Room at Roza's Guest House" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="1600" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
+              <img src="assets/images/optimized/classic-double-room.webp" srcset="assets/images/optimized/classic-double-room-480.webp 480w, assets/images/optimized/classic-double-room.webp 1200w" alt="Classic Room at Roza's Guest House" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="1600" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
               <span class="room-photo-cue">View photos</span>
               <div>
                 <div class="text-[10px] uppercase tracking-[0.24em] text-cream/62">Shared bathroom access</div>
@@ -2902,15 +2920,15 @@
               </div>
               <p class="room-price mt-4" data-room-pricing>Loading live direct price&hellip;</p>
               <div class="room-thumbs mt-6">
-                <div class="room-thumb"><img src="Classic/IMG_9118.PNG" alt="Shared shower and WC for Classic Room guests at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="Classic/IMG_9122.PNG" alt="Shared washbasin and amenities for Classic Room guests at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/classic-shared-shower.webp" srcset="assets/images/optimized/classic-shared-shower-480.webp 480w, assets/images/optimized/classic-shared-shower.webp 896w" alt="Shared shower and WC for Classic Room guests at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/classic-shared-washbasin.webp" srcset="assets/images/optimized/classic-shared-washbasin-480.webp 480w, assets/images/optimized/classic-shared-washbasin.webp 896w" alt="Shared washbasin and amenities for Classic Room guests at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
               </div>
             </div>
           </article>
 
           <article class="reveal group overflow-hidden rounded-[2rem] border border-forest/8 bg-white card-float" data-room-card data-room-type-id="PEAKMV">
             <div class="room-art flex items-end p-7 text-cream">
-              <img src="assets/images/optimized/peak-mountain-view-towers.webp" alt="Peak Mountain View room with Mestia tower view at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
+              <img src="assets/images/optimized/peak-mountain-view-towers.webp" srcset="assets/images/optimized/peak-mountain-view-towers-480.webp 480w, assets/images/optimized/peak-mountain-view-towers.webp 896w" alt="Peak Mountain View room with Mestia tower view at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
               <span class="room-photo-cue">View photos</span>
               <div>
                 <div class="text-[10px] uppercase tracking-[0.24em] text-cream/62">Warm ensuite stay</div>
@@ -2927,17 +2945,17 @@
               </div>
               <p class="room-price mt-4" data-room-pricing>Loading live direct price&hellip;</p>
               <div class="room-thumbs mt-6">
-                <div class="room-thumb"><img src="Peack Mountain View/IMG_9157.PNG" alt="Peak Mountain View room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="Peack Mountain View/IMG_9127.PNG" alt="Peak Mountain View twin room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="assets/images/optimized/peak-mountain-view-double.webp" alt="Peak Mountain View double room at Roza's Guest House" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb hidden"><img src="assets/images/optimized/peak-mountain-view-triple.webp" alt="Peak Mountain View triple room at Roza's Guest House" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-mountain-view-twin.webp" srcset="assets/images/optimized/peak-mountain-view-twin-480.webp 480w, assets/images/optimized/peak-mountain-view-twin.webp 896w" alt="Peak Mountain View room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-mountain-view-two-guest.webp" srcset="assets/images/optimized/peak-mountain-view-two-guest-480.webp 480w, assets/images/optimized/peak-mountain-view-two-guest.webp 896w" alt="Peak Mountain View twin room at Roza's Guest House" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-mountain-view-double.webp" srcset="assets/images/optimized/peak-mountain-view-double-480.webp 480w, assets/images/optimized/peak-mountain-view-double.webp 1200w" alt="Peak Mountain View double room at Roza's Guest House" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb hidden"><img src="assets/images/optimized/peak-mountain-view-triple.webp" srcset="assets/images/optimized/peak-mountain-view-triple-480.webp 480w, assets/images/optimized/peak-mountain-view-triple.webp 1200w" alt="Peak Mountain View triple room at Roza's Guest House" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
               </div>
             </div>
           </article>
 
           <article class="reveal group overflow-hidden rounded-[2rem] border border-forest/8 bg-white card-float" data-room-card data-room-type-id="PEAKBAL">
             <div class="room-art flex items-end p-7 text-cream">
-              <img src="assets/images/optimized/peak-balcony-double.webp" alt="Peak Mountain View double room with a private balcony" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
+              <img src="assets/images/optimized/peak-balcony-double.webp" srcset="assets/images/optimized/peak-balcony-double-480.webp 480w, assets/images/optimized/peak-balcony-double.webp 1200w" alt="Peak Mountain View double room with a private balcony" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
               <span class="room-photo-cue">View photos</span>
               <div>
                 <div class="text-[10px] uppercase tracking-[0.24em] text-cream/62">Balcony and open skies</div>
@@ -2954,16 +2972,16 @@
               </div>
               <p class="room-price mt-4" data-room-pricing>Loading live direct price&hellip;</p>
               <div class="room-thumbs mt-6">
-                <div class="room-thumb"><img src="assets/images/optimized/peak-balcony-twin.webp" alt="Peak Mountain View twin room with a private balcony" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="assets/images/optimized/peak-balcony-triple.webp" alt="Peak Mountain View balcony room for three guests" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="assets/images/optimized/peak-balcony-triple-alt.webp" alt="Alternate layout of the Peak Mountain View balcony room for three guests" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-balcony-twin.webp" srcset="assets/images/optimized/peak-balcony-twin-480.webp 480w, assets/images/optimized/peak-balcony-twin.webp 1200w" alt="Peak Mountain View twin room with a private balcony" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-balcony-triple.webp" srcset="assets/images/optimized/peak-balcony-triple-480.webp 480w, assets/images/optimized/peak-balcony-triple.webp 1200w" alt="Peak Mountain View balcony room for three guests" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-balcony-triple-alt.webp" srcset="assets/images/optimized/peak-balcony-triple-alt-480.webp 480w, assets/images/optimized/peak-balcony-triple-alt.webp 1200w" alt="Alternate layout of the Peak Mountain View balcony room for three guests" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
               </div>
             </div>
           </article>
 
           <article class="reveal group overflow-hidden rounded-[2rem] border border-forest/8 bg-white card-float" data-room-card data-room-type-id="COTTAGE">
             <div class="room-art flex items-end p-7 text-cream">
-              <img src="Cottage/IMG_9193.PNG" alt="Peak Cottage lounge with mountain view" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
+              <img src="assets/images/optimized/peak-cottage-lounge.webp" srcset="assets/images/optimized/peak-cottage-lounge-480.webp 480w, assets/images/optimized/peak-cottage-lounge.webp 896w" alt="Peak Cottage lounge with mountain view" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 34rem, (min-width: 768px) 42vw, 100vw" />
               <span class="room-photo-cue">View photos</span>
               <div>
                 <div class="text-[10px] uppercase tracking-[0.24em] text-cream/62">Private A-frame stay</div>
@@ -2980,13 +2998,13 @@
               </div>
               <p class="room-price mt-4" data-room-pricing>Loading live direct price&hellip;</p>
               <div class="room-thumbs mt-6">
-                <div class="room-thumb"><img src="Cottage/IMG_9177.PNG" alt="Two Peak Cottage exteriors below the mountains" loading="lazy" decoding="async" width="895" height="1061" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="Cottage/IMG_9181.PNG" alt="Peak Cottage bedroom with mountain view" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="Cottage/IMG_9183.PNG" alt="Peak Cottage twin sleeping area" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb"><img src="Cottage/IMG_9184.PNG" alt="Peak Cottage kitchen and dining area" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb hidden"><img src="Cottage/IMG_9179.PNG" alt="Peak Cottage private deck" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb hidden"><img src="Cottage/IMG_9190.PNG" alt="Peak Cottage living area" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
-                <div class="room-thumb hidden"><img src="assets/images/optimized/peak-cottage-bathroom.webp" alt="Peak Cottage private shower" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-cottage-exterior.webp" srcset="assets/images/optimized/peak-cottage-exterior-480.webp 480w, assets/images/optimized/peak-cottage-exterior.webp 895w" alt="Two Peak Cottage exteriors below the mountains" loading="lazy" decoding="async" width="895" height="1061" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-cottage-bedroom.webp" srcset="assets/images/optimized/peak-cottage-bedroom-480.webp 480w, assets/images/optimized/peak-cottage-bedroom.webp 896w" alt="Peak Cottage bedroom with mountain view" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-cottage-twin.webp" srcset="assets/images/optimized/peak-cottage-twin-480.webp 480w, assets/images/optimized/peak-cottage-twin.webp 896w" alt="Peak Cottage twin sleeping area" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb"><img src="assets/images/optimized/peak-cottage-kitchen.webp" srcset="assets/images/optimized/peak-cottage-kitchen-480.webp 480w, assets/images/optimized/peak-cottage-kitchen.webp 896w" alt="Peak Cottage kitchen and dining area" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb hidden"><img src="assets/images/optimized/peak-cottage-deck.webp" srcset="assets/images/optimized/peak-cottage-deck-480.webp 480w, assets/images/optimized/peak-cottage-deck.webp 896w" alt="Peak Cottage private deck" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb hidden"><img src="assets/images/optimized/peak-cottage-living.webp" srcset="assets/images/optimized/peak-cottage-living-480.webp 480w, assets/images/optimized/peak-cottage-living.webp 896w" alt="Peak Cottage living area" loading="lazy" decoding="async" width="896" height="1195" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
+                <div class="room-thumb hidden"><img src="assets/images/optimized/peak-cottage-bathroom.webp" srcset="assets/images/optimized/peak-cottage-bathroom-480.webp 480w, assets/images/optimized/peak-cottage-bathroom.webp 1200w" alt="Peak Cottage private shower" loading="lazy" decoding="async" width="1200" height="1600" sizes="(min-width: 1280px) 7rem, (min-width: 768px) 10vw, 22vw" /></div>
               </div>
             </div>
           </article>
@@ -3965,6 +3983,8 @@
 
         return Array.from(card.querySelectorAll(selector)).map((image) => ({
           src: image.getAttribute("src"),
+          srcset: image.getAttribute("srcset") || "",
+          sizes: image.getAttribute("sizes") || "",
           alt: image.getAttribute("alt") || "",
           width: Number(image.getAttribute("width")) || null,
           height: Number(image.getAttribute("height")) || null
@@ -3986,6 +4006,11 @@
         roomViewerImage.alt = current.alt;
         roomViewerImage.loading = "eager";
         roomViewerImage.decoding = "async";
+
+        if (current.srcset) roomViewerImage.srcset = current.srcset;
+        else roomViewerImage.removeAttribute("srcset");
+        if (current.sizes) roomViewerImage.sizes = "(max-width: 767px) 100vw, 72vw";
+        else roomViewerImage.removeAttribute("sizes");
 
         if (current.width) roomViewerImage.width = current.width;
         if (current.height) roomViewerImage.height = current.height;
@@ -4054,6 +4079,8 @@
           thumbImage.alt = item.alt;
           thumbImage.loading = "lazy";
           thumbImage.decoding = "async";
+          if (item.srcset) thumbImage.srcset = item.srcset;
+          if (item.sizes) thumbImage.sizes = "(max-width: 767px) 18vw, 6rem";
           if (item.width) thumbImage.width = item.width;
           if (item.height) thumbImage.height = item.height;
 
