@@ -12,6 +12,10 @@ The privacy page explains the collection and offers statistics preferences. It d
 
 To turn off basic statistics for everyone, set `enabled` to `false` in `assets/js/basic-statistics-config.js` and publish through the same workflow. Check the actual public files after the deployment succeeds; a commit on GitHub alone does not prove the website has updated. Browser privacy settings and blockers can reduce the reported totals.
 
+## Room photographs
+
+Use the existing category folders as the owner's confirmed photograph mapping: `Classic`, `Peak Mountain View`, `Peak Mountain View with Balcony`, and `Cottage`. Preserve their arrangements when maintaining the galleries on both `index.html` and `book.html`. The hotel bathroom originals `IMG_9118.PNG` and `IMG_9122.PNG` occur in all three hotel categories. The cottage gallery uses its own photographs, including the separate `IMG_1560_result.jpeg` bathroom source. Keep the established room-type bathroom descriptions and avoid inventing additional layout or access claims from photographs.
+
 ## Release recovery
 
 Before a release, retain a recoverable copy of the current published source and record its commit. Revert the relevant release commits through normal Git history if rollback is needed, allow the existing Pages workflow to complete, and verify the public files. Preserve the existing public address and booking backend configuration.
