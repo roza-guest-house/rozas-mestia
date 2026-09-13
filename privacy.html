@@ -116,6 +116,11 @@
     .contact p { margin: 0; }
     .contact a { font-weight: 700; text-decoration-color: rgba(188,122,76,0.55); text-underline-offset: 0.2em; }
     .updated { margin: 2rem 0 0; color: #71807B; font-size: 0.82rem; }
+    .statistics-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-block: 1rem; }
+    .statistics-actions button { min-height: 44px; padding: 0.7rem 1rem; border: 1px solid var(--forest); border-radius: 0.8rem; color: var(--forest); background: var(--paper); font: inherit; font-weight: 700; cursor: pointer; }
+    .statistics-actions button:hover { background: var(--stone); }
+    .statistics-actions button:disabled { opacity: 0.55; cursor: default; }
+    #basic-statistics-status { font-weight: 600; }
     footer { padding: 1.6rem 1.25rem; background: var(--forest-deep); color: var(--cream); text-align: center; font-size: 0.86rem; }
 
     @media (max-width: 540px) {
@@ -167,14 +172,26 @@
         <p>The public website is hosted using GitHub Pages. Direct-booking information is processed through Google Apps Script and may be stored in Google Sheets and sent through Gmail so the guesthouse can operate the reservation and send confirmations. WhatsApp and email are governed by their own providers' privacy terms when you choose those contact methods.</p>
       </section>
       <section id="optional-analytics">
-        <h2>Browser storage and optional measurement</h2>
+        <h2>Browser storage and external services</h2>
         <p>Essential booking features use storage in your current browser tab to remember your selected dates, guest count, bed preference and room category, and to protect against duplicate submissions. These stored preferences do not include your name, contact details or guest notes. Closing the tab normally clears this session storage; blocking it may prevent preferences or a pending booking attempt from being remembered.</p>
-        <p>Optional analytics and advertising tags are currently disabled. The website does not send booking-funnel events or campaign attribution to an analytics provider. If optional analytics is introduced, this notice and the visitor choices will be updated before it is enabled.</p>
+        <p>Google Analytics and advertising tags are disabled. We use the basic website statistics described below to understand and improve how the website works.</p>
         <p>GitHub Pages, Google-hosted fonts and the booking service receive ordinary connection information when your browser requests their content. The interactive Google Map loads only when you choose “Show interactive map”; Google then receives connection information and applies its own privacy terms. You can also open the separate Google Maps link. The booking service uses the information described above to process and protect reservations.</p>
+      </section>
+      <section id="basic-statistics">
+        <h2>Basic website statistics</h2>
+        <p>We use Cloudflare Web Analytics on our home and booking pages to understand visits, pages viewed, referring websites, approximate country, browser and device type, and page performance. It does not use analytics cookies or a persistent visitor identifier, and it does not track you across websites. We do not send guest names, contact details, booking references or guest notes to this service.</p>
+        <p>Cloudflare receives ordinary connection information, including your IP address, to deliver the service. Cloudflare states that the analytics service discards IP addresses at its nearest data centre and does not store them in its core databases or logs. Page and referrer query strings are excluded from its statistics. Its dashboard provides the previous six months of data; unsampled data is kept for seven days and older data is sampled. See <a href="https://developers.cloudflare.com/speed/observatory/rum-beacon/">Cloudflare's collection details</a> and <a href="https://developers.cloudflare.com/web-analytics/faq/">data availability information</a>.</p>
+        <p>This privacy page does not load the statistics service. You can turn statistics off for this browser below. We store only that preference on your device until you change it or clear website storage. The choice applies when you next load a page; close any other guesthouse pages already open for it to apply there too. Booking remains available. We also respect your browser's Do Not Track or Global Privacy Control signal.</p>
+        <div class="statistics-actions">
+          <button id="basic-statistics-opt-out" type="button" disabled>Turn off basic statistics</button>
+          <button id="basic-statistics-opt-in" type="button" disabled>Allow basic statistics</button>
+        </div>
+        <p id="basic-statistics-status" role="status" aria-live="polite">Loading your statistics preference…</p>
+        <noscript><p>JavaScript is disabled, so basic statistics do not run in this browser.</p></noscript>
       </section>
       <section>
         <h2>Retention and protection</h2>
-        <p>Booking information is kept only for as long as reasonably necessary to manage the stay, handle enquiries or disputes, protect the booking service and satisfy applicable legal, tax or accounting requirements. Access to operational booking records is restricted to authorised guesthouse staff.</p>
+        <p>Booking information is kept only for as long as reasonably necessary to manage the stay, handle enquiries or disputes, protect the booking service and satisfy applicable legal, tax or accounting requirements. Access to operational booking records is restricted to the authorised guesthouse owner/operator.</p>
       </section>
       <section>
         <h2>Your choices</h2>
@@ -188,11 +205,13 @@
           <strong>Address:</strong> 9 Erekle Parjiani I Alley, Mestia 3200, Georgia</p>
         </div>
       </section>
-      <p class="updated">Last updated: 6 September 2026.</p>
+      <p class="updated">Last updated: 13 September 2026.</p>
     </article>
   </main>
   <footer>Roza's Guest House · Mestia, Svaneti, Georgia</footer>
   <script src="assets/js/measurement-config.js"></script>
   <script src="assets/js/measurement.js"></script>
+  <script src="assets/js/basic-statistics-config.js"></script>
+  <script src="assets/js/basic-statistics.js"></script>
 </body>
 </html>
